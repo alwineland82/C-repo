@@ -1,4 +1,5 @@
-﻿string Weekday(int num){
+﻿string Weekday(int num)
+ {
     num--;
     string[] days = {"Monday", "Tuesday", "Wendnesday", 
                   "Thursday", "Friday", "Saturday", "Sunday"};
