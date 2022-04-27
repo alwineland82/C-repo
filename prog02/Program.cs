@@ -1,7 +1,6 @@
 ﻿string Weekday(int num){
     num--;
-    string[] days = new string[7];
-    days = new[] {"Monday", "Tuesday", "Wendnesday", 
+    string[] days = {"Monday", "Tuesday", "Wendnesday", 
                   "Thursday", "Friday", "Saturday", "Sunday"};
     return days[num];               
 } 
