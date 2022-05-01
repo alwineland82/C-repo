@@ -1,3 +1,11 @@
-﻿float x = float.Parse(Console.ReadLine()), y = float.Parse(Console.ReadLine());
-string[] reply = {"NO", "YES"};
-Console.WriteLine(reply[Convert.ToInt32(y == x / y)]); 
+﻿string IsItPower(int num1, int num2)
+{
+    if(Math.Pow(num2, 2) == num1)
+    {
+        return "YEEEES";
+    } else
+    {
+        return "NOOOOO";
+    }
+}
+Console.WriteLine(IsItPower(9, 3));
