@@ -1,7 +1,13 @@
-﻿void Even(int num)
+﻿void IsEven(int num)
 {
-    string[] reply = {"NO", "YES"};
-    Console.WriteLine(reply[Convert.ToInt32(num % 2 == 0)]);
+    if(num % 2 == 0)
+    {
+        Console.WriteLine("YES");
+    }
+    else
+    {
+        Console.WriteLine("NO");
+    }
 }
 int num = int.Parse(Console.ReadLine());
-Even(num);
+IsEven(num);
