@@ -1,12 +1,13 @@
-﻿char Greater_Digit(string num)
+﻿int Greater_Digit(int num)
 {
-    if (Convert.ToInt32(num[0]) > Convert.ToInt32(num[1]))
+    if (num / 10 > num % 10)
     {
-        return num[0];
+        return num / 10;
     }else
     {
-        return num[1];
+        return num % 10;
     }
 }
-string x = Console.ReadLine();
+int x = new Random().Next(10, 99);
+Console.WriteLine(x);
 Console.WriteLine(Greater_Digit(x));

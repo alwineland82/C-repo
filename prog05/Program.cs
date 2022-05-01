@@ -1,6 +1,6 @@
-﻿char Second_Number(string number)
+﻿int Second_Number(int number)
 {
-    return number[1];
+    return number  / 10 % 10;
 }
-string num = Console.ReadLine();
+int num = int.Parse(Console.ReadLine());
 Console.WriteLine(Second_Number(num));
