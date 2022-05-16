@@ -1,16 +1,13 @@
 class Quarter
 {
-    public int x;
-    public int y;
+    public string range = "Defoult";
 
-    public string quarterNumber = "Space";
-    public Quarter(int x, int y)
+    public int quarterNumber = 0;
+    public Quarter(int quarterNumber)
     {
-        this.x = x;
-        this.y = y;
-        if(this.x > 0 && this.y > 0) quarterNumber = "One";
-        if(this.x > 0 && this.y < 0) quarterNumber = "Two";
-        if(this.x < 0 && this.y < 0) quarterNumber = "Three";
-        if(this.x < 0 && this.y > 0) quarterNumber = "Four";
+        if(quarterNumber == 1) range = "axis x > 0 & axis y > 0";
+        if(quarterNumber == 2) range = "axis x > 0 & axis y < 0";
+        if(quarterNumber == 3) range = "axis x < 0 & axis y < 0";
+        if(quarterNumber == 4) range = "axis x < 0 & axis y > 0";
     }
 }
