@@ -1,23 +1,8 @@
 ﻿using System;
-namespace Quarters
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int Foo(int x, int y)
-            {
-                if(x * y > 0)
-            }
 
-            Console.WriteLine(Foo(4, -5)); 
-        }
-    }
-}
+Console.WriteLine("Insert values for x & y coordinates to know the quarter they belong to.");
+int x = int.Parse(Console.ReadLine() ?? "0");
+int y = int.Parse(Console.ReadLine() ?? "0");
 
-
-
-
-
-//int x = int.Parse(Console.ReadLine() ?? "0");
-//int y = int.Parse(Console.ReadLine() ?? "0");
+Quarter one = new(x, y);
+Console.WriteLine($"The above coordinates belong to quarter: {one.quarterNumber}");
