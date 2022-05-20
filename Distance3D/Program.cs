@@ -2,9 +2,9 @@
 
 namespace Distance3D
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
             Console.WriteLine("Please, enter 3 coordinates for the first point.\nUse 'space' in between the numbers" + 
             "\nEnter only 2 coordinates, if you want 2D points calculation.");

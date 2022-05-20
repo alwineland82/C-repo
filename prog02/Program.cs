@@ -1,4 +1,4 @@
-﻿string day = Console.ReadLine();
+﻿string day = Console.ReadLine() ?? "";
 switch (day)
     {
         case "1":
