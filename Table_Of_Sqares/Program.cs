@@ -10,9 +10,9 @@ void TableOfNumbers(int num, string power)
     if(power == "2") {Func = Foo1; pow = "\xB2";}
     if(power == "3") {Func = Foo2; pow = "\xB3";}
     int WidthOfCell = (Func(num)).ToString().Length + num.ToString().Length + 4;
-    int NumberOfCells = 130 / WidthOfCell;
+    int NumberOfCells = (Console.WindowWidth - 45) / WidthOfCell;
     int counter_of_cells = 0;
-    Console.WriteLine(Epy(170, "*"));
+    Console.WriteLine(Epy(Console.WindowWidth, "*"));
     Console.Write("|");
     for(int i = 1; i < num + 1; i++)
     {
@@ -38,7 +38,7 @@ void TableOfNumbers(int num, string power)
             }
     }
     Console.WriteLine();
-    Console.WriteLine(Epy(170, "*"));
+    Console.WriteLine(Epy(Console.WindowWidth, "*"));
     Console.WriteLine();
 }
 //-----------------------------------------------------------------------------------------------------
