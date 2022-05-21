@@ -12,11 +12,11 @@ void TableOfNumbers(int num, string power)
     int WidthOfCell = (Func(num)).ToString().Length + num.ToString().Length + 4;
     int NumberOfCells = (Console.WindowWidth - 45) / WidthOfCell;
     int counter_of_cells = 0;
-    Console.WriteLine(Epy(Console.WindowWidth, "*"));
+    Console.WriteLine(LineWriter(Console.WindowWidth, "*"));
     Console.Write("|");
     for(int i = 1; i < num + 1; i++)
     {
-        Console.Write($" {i}{pow} = {Func(i)}" + Epy(WidthOfCell - (Func(i)).ToString().Length - $"{i}\xB2 =".Length) + "|");
+        Console.Write($" {i}{pow} = {Func(i)}" + LineWriter(WidthOfCell - (Func(i)).ToString().Length - $"{i}\xB2 =".Length) + "|");
         counter_of_cells += 1;
         if(counter_of_cells == NumberOfCells)
         {
@@ -24,13 +24,13 @@ void TableOfNumbers(int num, string power)
             Console.Write("|");
             for(int j = 0; j < NumberOfCells; j++)
             {
-                Console.Write(Epy(WidthOfCell + 2, "_") + "|");
+                Console.Write(LineWriter(WidthOfCell + 2, "_") + "|");
             } 
             Console.WriteLine();
             Console.Write("|");
             for(int j = 0; j < NumberOfCells; j++)
             {
-                Console.Write(Epy(WidthOfCell + 2, " ") + "|");
+                Console.Write(LineWriter(WidthOfCell + 2, " ") + "|");
             }         
             counter_of_cells = 0; 
             Console.WriteLine();
@@ -38,18 +38,18 @@ void TableOfNumbers(int num, string power)
             }
     }
     Console.WriteLine();
-    Console.WriteLine(Epy(Console.WindowWidth, "*"));
+    Console.WriteLine(LineWriter(Console.WindowWidth, "*"));
     Console.WriteLine();
 }
 //-----------------------------------------------------------------------------------------------------
 Console.Clear();
 Console.WriteLine("Please, insert any number from 1 to 46340.");
 int input = int.Parse(Console.ReadLine() ?? "");
-Console.WriteLine("Please, specify if you want power of 2 or power of 3");
+Console.WriteLine("Please, specify if you want power of 2 or power of 3");  // User interface 
 string Power = Console.ReadLine() ?? "";
 TableOfNumbers(input, Power);
 //______________________________________________________________________________________________________________
-string Epy(int num, string sign = " ")
+string LineWriter(int num, string sign = " ")
 {                                         /* Small function to print lines beteen rows */
     string res = String.Empty;              
     for(int i = 0; i < num; i++)

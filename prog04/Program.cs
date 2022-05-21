@@ -6,5 +6,5 @@
         Console.Write(" ");
     }
 }
-int x = int.Parse(Console.ReadLine());
+int x = int.Parse(Console.ReadLine() ?? "");
 Even_Numbers(x);
