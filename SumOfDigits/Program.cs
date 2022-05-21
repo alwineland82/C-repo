@@ -2,8 +2,8 @@
 
 int CountDigits(int num)
 {
-    int counter = 0;
-    while(num != 0){num /= 10; counter += 1;} return counter;
+    int sum = 0;
+    while(num != 0){sum += num % 10; num /= 10;} return sum;
 }
 
-Console.WriteLine(CountDigits(100));
+Console.WriteLine(CountDigits(123));
