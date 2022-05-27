@@ -5,7 +5,7 @@ void Pairs(int[] arr)
 {
     for(int i = 0, j = 1; i < arr.Length / 2; i++, j++)
     {
-        Write(arr[i] + arr[^j] + " | ");
+        Write(arr[i] * arr[^j] + " | ");
     }
 }
 
