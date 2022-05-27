@@ -10,6 +10,7 @@ class Program {
       foreach(var i in y) Console.WriteLine(i);
   }
   static int[] CopyCat(int[] arg) => (from i in arg select i).ToArray();
+  static string[] CopyCat(string[] arg) => (from i in arg select i).ToArray();
   static float[] CopyCat(float[] arg) => (from i in arg select i).ToArray();
   static double[] CopyCat(double[] arg) => (from i in arg select i).ToArray();
   static char[] CopyCat(char[] arg) => (from i in arg select i).ToArray();
