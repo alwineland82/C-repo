@@ -1,2 +1,0 @@
-# C-repo
-Studying C#
