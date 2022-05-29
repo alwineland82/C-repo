@@ -13,7 +13,7 @@ class Program {
 //_____________________________________________________________________________
     // Action:
     float x, y;
-    Console.WriteLine("Insert 4 numbers to determine coefs:");
+    Console.WriteLine("Insert 4 numbers to define coefs:");
     TwoLinesCrossing(Console.ReadLine(), out x, out y);
 //_____________________________________________________________________________
   }
@@ -29,7 +29,7 @@ class Program {
     {
         if (match.Count < 4)
         {
-            throw new Exception("INSUFFICIENT NUMBERS FOUND!");
+            throw new Exception("NOT ENOUGH NUMBERS FOUND!");
         }
     }
     catch (Exception e)
