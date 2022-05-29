@@ -27,9 +27,9 @@ class Program {
     MatchCollection match = regex.Matches(coef);
     try
     {
-        if (match.Count < 1)
+        if (match.Count < 4)
         {
-            throw new Exception("NO NUMBERS FOUND!");
+            throw new Exception("INSUFFICIENT NUMBERS FOUND!");
         }
     }
     catch (Exception e)
