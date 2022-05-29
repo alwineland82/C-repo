@@ -14,8 +14,8 @@ class Program {
 //_____________________________________________________________________________
     // Action:
     float x, y;
-    Console.WriteLine("Insert 4 numbers to determine coefs:");
-    TwoLinesCrossing(Console.ReadLine() ?? "", out x, out y);
+    WriteLine("Insert 4 numbers to determine coefs:");
+    TwoLinesCrossing(ReadLine() ?? "", out x, out y);
     WriteLine(x);
     WriteLine(y);
 //_____________________________________________________________________________
@@ -30,21 +30,21 @@ class Program {
     MatchCollection match = regex.Matches(coef);
     if (match.Count < 4)
     {
-      Console.WriteLine("Not enough numbers to calculate");
+      WriteLine("Not enough numbers to calculate");
       Beep();
       Thread.Sleep(100);
       Beep();
       Thread.Sleep(100);
       Beep();
-      TwoLinesCrossing(Console.ReadLine() ?? "", out x, out y);
+      TwoLinesCrossing(ReadLine() ?? "", out x, out y);
     }
     try
     {
       x = (float.Parse(match[0].Value) - float.Parse(match[2].Value)) / 
           (float.Parse(match[1].Value) - float.Parse(match[3].Value));
       y = float.Parse(match[3].Value) * x + float.Parse(match[2].Value);
-      Console.Write($"Coordinate X = {x}" + "    ");
-      Console.Write($"Coordinate Y = {y}\n");
+      Write($"Coordinate X = {x}" + "    ");
+      Write($"Coordinate Y = {y}\n");
     }
     catch{}
 //___________________________________________________________________________      
