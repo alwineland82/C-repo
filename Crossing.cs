@@ -6,6 +6,7 @@
 using System;
 using System.Text.RegularExpressions;
 using System.Threading;
+using  static System.Console;
 
 
 class Program {
@@ -13,8 +14,10 @@ class Program {
 //_____________________________________________________________________________
     // Action:
     float x, y;
-    Console.WriteLine("Insert 4 numbers to define coefs:");
-    TwoLinesCrossing(Console.ReadLine(), out x, out y);
+    Console.WriteLine("Insert 4 numbers to determine coefs:");
+    TwoLinesCrossing(Console.ReadLine() ?? "", out x, out y);
+    WriteLine(x);
+    WriteLine(y);
 //_____________________________________________________________________________
   }
  
@@ -25,28 +28,25 @@ class Program {
     y = 0;
     Regex regex = new Regex(@"\d+");
     MatchCollection match = regex.Matches(coef);
+    if (match.Count < 4)
+    {
+      Console.WriteLine("Not enough numbers to calculate");
+      Beep();
+      Thread.Sleep(100);
+      Beep();
+      Thread.Sleep(100);
+      Beep();
+      TwoLinesCrossing(Console.ReadLine() ?? "", out x, out y);
+    }
     try
     {
-        if (match.Count < 4)
-        {
-            throw new Exception("NOT ENOUGH NUMBERS FOUND!");
-        }
+      x = (float.Parse(match[0].Value) - float.Parse(match[2].Value)) / 
+          (float.Parse(match[1].Value) - float.Parse(match[3].Value));
+      y = float.Parse(match[3].Value) * x + float.Parse(match[2].Value);
+      Console.Write($"Coordinate X = {x}" + "    ");
+      Console.Write($"Coordinate Y = {y}\n");
     }
-    catch (Exception e)
-    {
-        Console.WriteLine($"{e.Message}");
-        Console.Beep();
-        Thread.Sleep(100);
-        Console.Beep();
-        Thread.Sleep(100);
-        Console.Beep();
-        return;
-    }
-    x = (float.Parse(match[0].Value) - float.Parse(match[2].Value)) / 
-        (float.Parse(match[1].Value) - float.Parse(match[3].Value));
-    y = float.Parse(match[3].Value) * x + float.Parse(match[2].Value);
-    Console.Write($"Coordinate X = {x}" + "    ");
-    Console.Write($"Coordinate Y = {y}");
+    catch{}
 //___________________________________________________________________________      
   }
 }
