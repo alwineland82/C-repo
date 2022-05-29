@@ -50,7 +50,7 @@ string Power = Console.ReadLine() ?? "";
 TableOfNumbers(input, Power);
 //______________________________________________________________________________________________________________
 string LineWriter(int num, string sign = " ")
-{                                         /* Small function to print lines beteen rows */
+{                                         /* Small function to print lines between rows */
     string res = String.Empty;              
     for(int i = 0; i < num; i++)
     {                                   
