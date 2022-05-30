@@ -7,7 +7,7 @@ class ArrayArray {
     DisplayArray(MplusN(17, 23));
     
   }
-  static int[,] MplusN(int m, int n)
+  static int[,] EvenPower(int m, int n)
   {
       int[,] result = new int[m, n];
       for(int i = 0; i < m; i++)
