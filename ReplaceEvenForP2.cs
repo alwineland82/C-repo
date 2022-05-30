@@ -4,7 +4,7 @@ using static System.Console;
 
 class ArrayArray {
   static void Main() {
-    DisplayArray(MplusN(17, 23));
+    DisplayArray(EvenPower(17, 23));
     
   }
   static int[,] EvenPower(int m, int n)
