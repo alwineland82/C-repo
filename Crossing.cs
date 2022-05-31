@@ -28,7 +28,7 @@ class Program {
     y = 0;
     Regex regex = new Regex(@"\d+");
     MatchCollection match = regex.Matches(coef);
-    if (match.Count < 4)
+    if (match.Count != 4)
     {
       WriteLine("Not enough numbers to calculate");
       Beep();
