@@ -7,13 +7,15 @@ using static System.Console;
 class ArrayArray {
   static void Main() {
     int[,] x = Generator(3, 3);
-    LineChanger(ref x);
+    DisplayArray(x);
+    WriteLine();
+    LineChanger(x);
     DisplayArray(x);
     
     
   }
 //*****************************************************************************
-  static void LineChanger(ref int[,] arr)
+  static void LineChanger(int[,] arr)
   {
       for(int i = 0; i < arr.GetLength(1); i++)
       {
