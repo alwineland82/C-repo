@@ -11,10 +11,10 @@ class Program {
     DisplayArray(x);
     WriteLine();
     
-    MinorLine(x);
+    program.MinorLine(x);
   }
 //___________________________________________________________________________________
-  static void MinorLine(int[,] arr)
+  void MinorLine(int[,] arr)
   {
       int counter = 0;
       int line_number = 0;
