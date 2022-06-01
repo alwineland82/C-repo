@@ -17,13 +17,13 @@ class Program
 
     }
     //*****************************************************************************
-    int[] NumbersParser(string text)
+    int[] NumbersParser(string text, int expected_qty = 4)
     {
       text += " ";
       string temp = "";
       bool Flag = false;
       int qty = 0;
-      int[] result = new int[4];
+      int[] result = new int[expected_qty];
       foreach(var i in text)
       {
         if(!"1234567890".Contains(i) && Flag == false)
