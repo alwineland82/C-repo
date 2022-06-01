@@ -19,6 +19,7 @@ class Program
     //*****************************************************************************
     int[] NumbersParser(string text)
     {
+      text += " ";
       string temp = "";
       bool Flag = false;
       int qty = 0;
