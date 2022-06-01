@@ -11,7 +11,7 @@ class Program
       int[] x = { 1, 2, 3, 4, 5 };
       WriteLine();
       Program program = new Program();
-      int[] Z = program.NumbersParser("ыва546крп543р п у цк=78в овп");
+      int[] Z = program.NumbersParser("56, второй - 23, третьей и четвертой 25, 30, 88, 30");
       Display(Z);
 
 
@@ -26,15 +26,8 @@ class Program
       int[] result = new int[expected_qty];
       foreach(var i in text)
       {
-        if(!"1234567890".Contains(i) && Flag == false)
-        {
-          continue;
-        }
-        if("1234567890".Contains(i))
-        {
-          temp += i;
-          Flag = true;
-        }
+        if(!"1234567890".Contains(i) && Flag == false){continue;}
+        if("1234567890".Contains(i)){temp += i; Flag = true;}
         if(!"1234567890".Contains(i) && Flag == true)
         {
           Flag = false;
@@ -42,7 +35,9 @@ class Program
           temp = "";
           qty++;
         }
-      }return result;
+        if(qty == expected_qty) return result;
+      }WriteLine("Warning! The quantity of numbers is less then expected.\nPlease, check your input.");
+      return result;
       
     }
     //********************************************************************************
