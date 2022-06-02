@@ -7,7 +7,7 @@ using static System.Console;
 class Program {
   static void Main() {
     
-    int[,] x = Generator(7, 3);
+    int[,] x = Generator(7, 7);
     DisplayArray(x);
     WriteLine();
     x = ArraySorter(x);
