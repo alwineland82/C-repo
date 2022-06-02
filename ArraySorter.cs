@@ -4,10 +4,10 @@ using System;
 using static System.Console;
 
 
-class ArrayArray {
+class Program {
   static void Main() {
     
-    int[,] x = Generator(7, 3);
+    int[,] x = Generator(7, 7);
     DisplayArray(x);
     WriteLine();
     x = ArraySorter(x);
@@ -16,7 +16,6 @@ class ArrayArray {
 //*****************************************************************************
  static int[,] ArraySorter(int[,] arr, int index = 0)
  {
-     int temp;
      if(index == arr.GetLength(0))
      {
          return arr;
@@ -27,9 +26,7 @@ class ArrayArray {
          {
              if(arr[index, j] < arr[index, j + 1])
              {
-                 temp = arr[index, j];
-                 arr[index, j] = arr[index, j + 1];
-                 arr[index, j + 1] = temp;
+                 (arr[index, j], arr[index, j + 1]) = (arr[index, j + 1], arr[index, j]);
              }
          }
      }index++;
@@ -39,13 +36,12 @@ class ArrayArray {
   static int[,] Generator(int m, int n)
   {
       int[,] result = new int[m, n];
-      int counter = 1;
+      Random rand = new Random();
       for(int i = 0; i < m; i++)
       {
           for(int j = 0; j < n; j++)
           {
-              result[i, j] = counter;
-              counter++;
+              result[i, j] = rand.Next(1, 10);
           }
       }return result;
   }
