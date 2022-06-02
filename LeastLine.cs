@@ -19,7 +19,7 @@ class Program {
       int counter = 0;
       int line_number = 0;
       int Min_Line = 0;
-      double min = double.PositiveInfinity;
+      int min = int.MaxValue;
       int temp_min = 0;
       foreach(var i in arr)
       {

@@ -1,6 +1,6 @@
 ﻿using System;
 using static System.Console;
-using System.Linq;
+
 
 int[] Massive21()
 {
