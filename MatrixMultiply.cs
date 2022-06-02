@@ -18,8 +18,7 @@ class Program {
 //__________________________________________________________________________
   static int[,] MatrixMultiplier(int[,] matrix1, int[,] matrix2)
   {
-    int[,] result = new int[Math.Max(matrix1.GetLength(0), matrix2.GetLength(0)), 
-                            Math.Max(matrix1.GetLength(1), matrix2.GetLength(1))];
+    int[,] result = new int[[matrix1.GetLength(0), matrix2.GetLength(1)];];
     if(matrix1.GetLength(0) != matrix2.GetLength(1))
     {
       throw new IndexOutOfRangeException("Matrices do not fit!");
