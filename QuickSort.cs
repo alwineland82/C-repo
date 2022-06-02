@@ -8,8 +8,8 @@ class Program
 {
     static void Main()
     {
-      int[] x = {2, 5, 7, 3, 6, 8, 3, 4, 7, 6, 8, 3};
-      x = QuickSort(x);
+      int[] array = {2, 5, 7, 3, 6, 8, 3, 4, 7, 6, 8, 3};
+      array = QuickSort(array);
       Display(x);
       
     } //*****************************************************************************
@@ -17,8 +17,8 @@ class Program
     {
       if(x.Length > 1)
       {
-        var bigger = (from i in x[0..^1] where i > x[^1] select i).ToArray();
-        var smaller = (from i in x[0..^1] where i < x[^1] select i).ToArray();
+        var bigger = (from i in x where i > x[^1] select i).ToArray();
+        var smaller = (from i in x where i < x[^1] select i).ToArray();
         var equal = (from i in x where i == x[^1] select i).ToArray();
         return Unify(QuickSort(bigger), equal, QuickSort(smaller));
       }else return x;
