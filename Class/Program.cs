@@ -13,20 +13,20 @@ class Program {
   static void Main() {
 //_____________________________________________________________________________
     // Action:
-    float x, y;
+  
     WriteLine("Insert 4 numbers to determine coefs:");
-    TwoLinesCrossing(ReadLine() ?? "", out x, out y);
+    (float x, float y) = TwoLinesCrossing(ReadLine() ?? "");
     WriteLine(x);
     WriteLine(y);
     
 //_____________________________________________________________________________
   }
- 
 //*****************************************************************************
   // Function definition 
-  static void TwoLinesCrossing(string coef, out float x, out float y) {
-    x = 0;
-    y = 0;
+  static (float, float) TwoLinesCrossing(string coef) 
+  {
+    float x = 0;
+    float y = 0;
     Regex regex = new Regex(@"\d+");
     MatchCollection match = regex.Matches(coef);
     if (match.Count < 4)
@@ -37,17 +37,12 @@ class Program {
       Beep();
       Thread.Sleep(100);
       Beep();
-      TwoLinesCrossing(ReadLine() ?? "", out x, out y);
+      return TwoLinesCrossing(ReadLine() ?? "");
     }
-    try
-    {
-      x = (float.Parse(match[0].Value) - float.Parse(match[2].Value)) / 
-          (float.Parse(match[1].Value) - float.Parse(match[3].Value));
-      y = float.Parse(match[3].Value) * x + float.Parse(match[2].Value);
-      Write($"Coordinate X = {x}" + "    ");
-      Write($"Coordinate Y = {y}\n");
-    }
-    catch{}
+    x = (float.Parse(match[0].Value) - float.Parse(match[2].Value)) / 
+        (float.Parse(match[1].Value) - float.Parse(match[3].Value));
+    y = float.Parse(match[3].Value) * x + float.Parse(match[2].Value);
+    return (x, y);
 //___________________________________________________________________________      
   }
 }
