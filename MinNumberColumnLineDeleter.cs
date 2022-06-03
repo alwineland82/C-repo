@@ -9,7 +9,7 @@ class Program {
     WriteLine();
     DisplayArray(MinNumberColumnLineDeleter(x));
   }
-//__________________________________________________________________________
+//*****************************************************************************
   static int[,] MinNumberColumnLineDeleter(int[,] array)
   {
       int[,] result = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
@@ -29,7 +29,7 @@ class Program {
       }   
       return result;
   }
-//___________________________________________________________________________
+//*****************************************************************************
    static int[,] Generator(int m, int n)
   { 
       int[] used = new int[m * n];
