@@ -9,21 +9,13 @@ class Program {
     WriteLine();
     DisplayArray(MinNumberColumnLineDeleter(x));
   }
-//***************************************************************************************************
+//__________________________________________________________________________
   static int[,] MinNumberColumnLineDeleter(int[,] array)
-  {            // Finds the min number and its location.
+  {
       int[,] result = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
-      var minLine = (0, 0);
-      int min = int.MaxValue;
-      for(int i = 0; i < array.GetLength(0); i++)
-      {
-          for(int j = 0; j < array.GetLength(1); j++)
-          {
-              if(array[i, j] < min){min = array[i, j]; minLine = (i, j);}
-          }
-      }
-             // Removes line and column from resulting matrix.
+      
       var index = (0, 0);
+      var minLine = FindMin(array);
       for(int i = 0; i < array.GetLength(0); i++)
       {
           if(minLine.Item1 == i){continue;}
@@ -37,7 +29,7 @@ class Program {
       }   
       return result;
   }
-//****************************************************************************************************
+//___________________________________________________________________________
    static int[,] Generator(int m, int n)
   { 
       int[] used = new int[m * n];
@@ -60,9 +52,21 @@ class Program {
       }return result;
   }
  //__________________________________________________________________________
-  // Provides unique numbers for matrix generator.
+  static (int, int) FindMin(int[,] array)
+  {
+    var minLine = (0, 0);
+    int min = int.MaxValue;
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+        if(array[i, j] < min){min = array[i, j]; minLine = (i, j);}
+        }
+    }return minLine; 
+  }
+ //__________________________________________________________________________
   static bool UniqueChecker(int[] array, int num)
-  {   
+  {
       for(var i = 0; i < array.Length; i++)
       {
           if(array[i] == num){return true;}
