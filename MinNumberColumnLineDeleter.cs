@@ -22,7 +22,7 @@ class Program {
               if(array[i, j] < min){min = array[i, j]; minLine = (i, j);}
           }
       }
-             // Removes from lines and columns from resulting matrix.
+             // Removes lines and columns from resulting matrix.
       var index = (0, 0);
       for(int i = 0; i < array.GetLength(0); i++)
       {
