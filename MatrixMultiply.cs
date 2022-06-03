@@ -1,3 +1,5 @@
+//Найти произведение двух матриц
+
 using System;
 using static System.Console;
 
@@ -11,9 +13,6 @@ class Program {
     DisplayArray(y);
     WriteLine();
     DisplayArray(MatrixMultiplier(x, y));
-    
-
-
   }
 //***************************************************************************
   static int[,] MatrixMultiplier(int[,] matrix1, int[,] matrix2)
