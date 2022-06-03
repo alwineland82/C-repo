@@ -54,7 +54,7 @@ class Program {
       int counter = 0;
       foreach(var i in arr)
       {
-          Write(i + "   ");
+          Write(i.ToString().PadRight(5));
           counter++;
           if(counter == arr.GetLength(1)) {WriteLine(); counter = 0;}
       }
