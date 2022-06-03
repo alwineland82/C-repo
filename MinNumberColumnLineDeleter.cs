@@ -9,9 +9,9 @@ class Program {
     WriteLine();
     DisplayArray(MinNumberColumnLineDeleter(x));
   }
-//__________________________________________________________________________
+//***************************************************************************************************
   static int[,] MinNumberColumnLineDeleter(int[,] array)
-  {            // Finds the min number and is location.
+  {            // Finds the min number and its location.
       int[,] result = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
       var minLine = (0, 0);
       int min = int.MaxValue;
@@ -22,7 +22,7 @@ class Program {
               if(array[i, j] < min){min = array[i, j]; minLine = (i, j);}
           }
       }
-             // Removes lines and columns from resulting matrix.
+             // Removes line and column from resulting matrix.
       var index = (0, 0);
       for(int i = 0; i < array.GetLength(0); i++)
       {
@@ -37,7 +37,7 @@ class Program {
       }   
       return result;
   }
-//___________________________________________________________________________
+//****************************************************************************************************
    static int[,] Generator(int m, int n)
   { 
       int[] used = new int[m * n];
