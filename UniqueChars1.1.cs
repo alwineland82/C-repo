@@ -28,8 +28,8 @@ class Program {
       int count = 0;
       foreach(var i in str)
       {
-          if(!Contains(",.-;'!?/()»>«<|][}{=+\"\n\t , i))", i)){count++;}
-          if(Contains(check, i) || Contains(",.-;'!?/()»>«<|][}{=+\"\n\t , i))", i)){continue;}
+          if(Contains("abcdefghjkilmnopqrstxywz", i)){count++;}
+          if(Contains(check, i) || !Contains("abcdefghjkilmnopqrstxywz", i)){continue;}
           foreach(var j in str)
           {
             if(i == j)
