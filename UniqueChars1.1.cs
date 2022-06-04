@@ -6,7 +6,10 @@ class Program {
   public static void Main (string[] args) 
   {
       
-    string text = @"Блин. Подъезды, конопля, водка без закуски, постоянная дача, пот, комары, картошка в мешках. Наше поколение более приспособлено к тому, что нас ждёт. Может поэтому среди нас не так много людей, кто против СВО.";
+    string text = @"Nec vi, nec clam, nec praecario. Nemo debet bis puniri pro uno delicto. Nemo inauditus condemnari debet, si non sit contumax.
+    Nemo iudex in propria causa. Nemo pluris iuris ad alium transfere potest, quam ipse haberet. Nemo praesens nisi intelligat. 
+    Nemo praesumitur malus. Non bis in idem. Non efficit affectus nisi sequatur effectus. Non obligat lex, nisi promulgata. Non omne, quod licet, 
+    honestum est. Non progredi est regredi. Non videtur vim facere, qui iure suo utitur. Nullum crimen, nulla poena sine lege.";
     var res = Unique(text);
     for(int i = 0; i < res.Item2.Length; i++)
     {
