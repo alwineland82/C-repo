@@ -8,6 +8,7 @@ class Program
   int qty;
   static int total;
   static int dif;
+  string abc = ""abcdefghjkilmnopqrstxywz";
   
   public static void Main (string[] args) 
   {
@@ -74,7 +75,7 @@ class Program
     string result = String.Empty;
     foreach(var i in str)
     {
-      if(Contains("abcdefghjkilmnopqrstxywz", i)){total++; result += i; if(!Contains(check, i)){check += i;}}
+      if(Contains(abc, i)){total++; result += i; if(!Contains(check, i)){check += i;}}
     }
     dif = check.Length;
     return result;
